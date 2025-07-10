@@ -1,3 +1,10 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+.import/
+*.import
+.lock
+.mono/
+tmp/
+.DS_Store
+/assets/
