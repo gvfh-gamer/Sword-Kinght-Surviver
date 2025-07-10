@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://e4igcj0ac1ky"]
+
+[ext_resource type="PackedScene" uid="uid://bfh3rsl14vrff" path="res://prefabs/player/player.tscn" id="1_aa4hi"]
+[ext_resource type="PackedScene" uid="uid://2b4w58gkr8dx" path="res://scenes/hud/hud.tscn" id="2_lrk6f"]
+[ext_resource type="PackedScene" uid="uid://qvjgn1x62jt6" path="res://prefabs/enemies/pawn.tscn" id="4_lrk6f"]
+[ext_resource type="PackedScene" uid="uid://dfved0vuhx8s3" path="res://prefabs/enemies/goblin.tscn" id="5_qd0ln"]
+[ext_resource type="PackedScene" uid="uid://dl3obm5skwlas" path="res://prefabs/enemies/sheep.tscn" id="6_qd0ln"]
+[ext_resource type="PackedScene" uid="uid://4sostjpfpa8w" path="res://prefabs/itens/meat.tscn" id="6_thcwo"]
+
+[node name="TesteUI" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_aa4hi")]
+position = Vector2(360, 234)
+
+[node name="HUD" parent="." instance=ExtResource("2_lrk6f")]
+
+[node name="sheep" parent="." instance=ExtResource("6_qd0ln")]
+position = Vector2(498, 582)
+
+[node name="sheep2" parent="." instance=ExtResource("6_qd0ln")]
+position = Vector2(845, 584)
+
+[node name="sheep3" parent="." instance=ExtResource("6_qd0ln")]
+position = Vector2(1017, 542)
+
+[node name="sheep4" parent="." instance=ExtResource("6_qd0ln")]
+position = Vector2(1031, 365)
+
+[node name="sheep5" parent="." instance=ExtResource("6_qd0ln")]
+position = Vector2(849, 466)
+
+[node name="sheep6" parent="." instance=ExtResource("6_qd0ln")]
+position = Vector2(708, 534)
+
+[node name="sheep7" parent="." instance=ExtResource("6_qd0ln")]
+position = Vector2(498, 510)
+
+[node name="pawn" parent="." instance=ExtResource("4_lrk6f")]
+position = Vector2(235, 531)
+
+[node name="pawn2" parent="." instance=ExtResource("4_lrk6f")]
+position = Vector2(75, 444)
+
+[node name="pawn3" parent="." instance=ExtResource("4_lrk6f")]
+position = Vector2(125, 562)
+
+[node name="pawn4" parent="." instance=ExtResource("4_lrk6f")]
+position = Vector2(349, 404)
+
+[node name="goblin" parent="." instance=ExtResource("5_qd0ln")]
+position = Vector2(863, 178)
+
+[node name="meat" parent="." instance=ExtResource("6_thcwo")]
+position = Vector2(82, 140)
+
+[node name="meat2" parent="." instance=ExtResource("6_thcwo")]
+position = Vector2(1061, 171)
+
+[node name="meat3" parent="." instance=ExtResource("6_thcwo")]
+position = Vector2(386, 602)

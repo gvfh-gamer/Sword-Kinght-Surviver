@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://dwjqch051cs2k"]
+
+[ext_resource type="Texture2D" uid="uid://dwp80lpyo8qa0" path="res://assets/swords_knight/Terrain/Water/Foam/Foam.png" id="1_h5ni7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_da2mf"]
+atlas = ExtResource("1_h5ni7")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x41l8"]
+atlas = ExtResource("1_h5ni7")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjd0d"]
+atlas = ExtResource("1_h5ni7")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1owl"]
+atlas = ExtResource("1_h5ni7")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dft4j"]
+atlas = ExtResource("1_h5ni7")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmefw"]
+atlas = ExtResource("1_h5ni7")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xw6x7"]
+atlas = ExtResource("1_h5ni7")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3cdb"]
+atlas = ExtResource("1_h5ni7")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4slup"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_da2mf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x41l8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjd0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1owl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dft4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmefw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xw6x7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3cdb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="foam" type="AnimatedSprite2D"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_4slup")
+autoplay = "default"

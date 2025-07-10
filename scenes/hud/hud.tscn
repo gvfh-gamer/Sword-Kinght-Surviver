@@ -1,0 +1,159 @@
+[gd_scene load_steps=11 format=3 uid="uid://2b4w58gkr8dx"]
+
+[ext_resource type="Script" uid="uid://dembruvhcu1k0" path="res://scripts/scenes/hud/hud.gd" id="1_c45xl"]
+[ext_resource type="Texture2D" uid="uid://dt07apngf8w5o" path="res://assets/swords_knight/UI/Banners/Banner_Horizontal.png" id="1_cgeww"]
+[ext_resource type="Texture2D" uid="uid://dq86kxbmhfia1" path="res://assets/swords_knight/UI/Banners/Banner_Vertical.png" id="2_c45xl"]
+[ext_resource type="Texture2D" uid="uid://dvwycdy254wvl" path="res://assets/swords_knight/Resources/Resources/G_Idle.png" id="3_mgtrf"]
+[ext_resource type="Texture2D" uid="uid://ekt0aqaslm26" path="res://assets/swords_knight/Resources/Resources/M_Idle.png" id="4_v7mo4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lrk6f"]
+texture = ExtResource("1_cgeww")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(32, 32, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n56i7"]
+atlas = ExtResource("3_mgtrf")
+region = Rect2(36, 44, 64, 64)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qd0ln"]
+font_size = 24
+font_color = Color(0.192157, 0.541176, 0.0705882, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 7
+shadow_color = Color(0.647059, 1, 0, 0.403922)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq0y1"]
+atlas = ExtResource("4_v7mo4")
+region = Rect2(36, 44, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c45xl"]
+texture = ExtResource("2_c45xl")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 32.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 32, 128, 128)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_c45xl")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -237.0
+offset_top = 11.0
+offset_right = 131.0
+offset_bottom = 113.0
+grow_horizontal = 0
+scale = Vector2(0.6, 0.6)
+theme_override_styles/panel = SubResource("StyleBoxTexture_lrk6f")
+
+[node name="gold" type="TextureRect" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.6667
+offset_top = -31.0
+offset_right = 126.125
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.55, 0.55)
+texture = SubResource("AtlasTexture_n56i7")
+
+[node name="gold_score" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.666702
+offset_top = -16.0
+offset_right = 148.333
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "200,000"
+label_settings = SubResource("LabelSettings_qd0ln")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="meat" type="TextureRect" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.667
+offset_top = -36.0
+offset_right = -22.6667
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.55, 0.55)
+texture = SubResource("AtlasTexture_mq0y1")
+
+[node name="meat_label" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -16.0
+offset_right = -37.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "21"
+label_settings = SubResource("LabelSettings_qd0ln")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.0
+offset_right = 93.0
+offset_bottom = 83.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_c45xl")
+
+[node name="timer_label" type="Label" parent="Panel2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.5
+offset_top = -23.5
+offset_right = 30.5
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "12:00"
+label_settings = SubResource("LabelSettings_qd0ln")
+horizontal_alignment = 1
+vertical_alignment = 1

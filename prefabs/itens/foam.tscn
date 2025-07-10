@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://bxxlg40sfd4w"]
+
+[ext_resource type="Texture2D" uid="uid://dwp80lpyo8qa0" path="res://assets/swords_knight/Terrain/Water/Foam/Foam.png" id="1_873y8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_873y8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbq63"]
+atlas = ExtResource("1_873y8")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibs1t"]
+atlas = ExtResource("1_873y8")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgest"]
+atlas = ExtResource("1_873y8")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdoty"]
+atlas = ExtResource("1_873y8")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ird5"]
+atlas = ExtResource("1_873y8")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlhsn"]
+atlas = ExtResource("1_873y8")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43fot"]
+atlas = ExtResource("1_873y8")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55x8j"]
+atlas = ExtResource("1_873y8")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2bo2e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbq63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibs1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgest")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdoty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ird5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlhsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43fot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55x8j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="foam" type="AnimatableBody2D"]
+
+[node name="collisoin" type="CollisionShape2D" parent="."]
+z_index = -2
+shape = SubResource("CircleShape2D_873y8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2bo2e")
+autoplay = "default"
+frame_progress = 0.371434

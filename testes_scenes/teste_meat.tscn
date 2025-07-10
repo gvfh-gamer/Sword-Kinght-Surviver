@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnacljmmkj4gu"]
+
+[ext_resource type="PackedScene" uid="uid://bfh3rsl14vrff" path="res://prefabs/player/player.tscn" id="1_emaja"]
+[ext_resource type="PackedScene" uid="uid://2b4w58gkr8dx" path="res://scenes/hud/hud.tscn" id="2_rkb5q"]
+[ext_resource type="PackedScene" uid="uid://4sostjpfpa8w" path="res://prefabs/itens/meat.tscn" id="6_1v5dg"]
+
+[node name="TesteUI" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_emaja")]
+position = Vector2(360, 234)
+
+[node name="HUD" parent="." instance=ExtResource("2_rkb5q")]
+
+[node name="meat" parent="." instance=ExtResource("6_1v5dg")]
+position = Vector2(82, 140)
+
+[node name="meat2" parent="." instance=ExtResource("6_1v5dg")]
+position = Vector2(1061, 171)
+
+[node name="meat3" parent="." instance=ExtResource("6_1v5dg")]
+position = Vector2(386, 602)

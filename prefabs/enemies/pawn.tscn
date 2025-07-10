@@ -1,0 +1,148 @@
+[gd_scene load_steps=21 format=3 uid="uid://qvjgn1x62jt6"]
+
+[ext_resource type="Script" uid="uid://d1ljj1vckv4wj" path="res://scripts/enemies/falow_player.gd" id="1_3gf8y"]
+[ext_resource type="Script" uid="uid://om2opg1uagp6" path="res://scripts/enemies/enemy.gd" id="1_fbra4"]
+[ext_resource type="Texture2D" uid="uid://dwif74ckwr0c3" path="res://assets/swords_knight/Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="1_sswsb"]
+[ext_resource type="PackedScene" uid="uid://4sostjpfpa8w" path="res://prefabs/itens/meat.tscn" id="2_v54o2"]
+[ext_resource type="PackedScene" uid="uid://cxs1ef11kqouv" path="res://prefabs/itens/gold.tscn" id="3_5yqk6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gf8y"]
+atlas = ExtResource("1_sswsb")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sswsb"]
+atlas = ExtResource("1_sswsb")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6cpj"]
+atlas = ExtResource("1_sswsb")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_046y8"]
+atlas = ExtResource("1_sswsb")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6g1w0"]
+atlas = ExtResource("1_sswsb")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iio8k"]
+atlas = ExtResource("1_sswsb")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qr7kk"]
+atlas = ExtResource("1_sswsb")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbra4"]
+atlas = ExtResource("1_sswsb")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v54o2"]
+atlas = ExtResource("1_sswsb")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yqk6"]
+atlas = ExtResource("1_sswsb")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocda1"]
+atlas = ExtResource("1_sswsb")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p17xo"]
+atlas = ExtResource("1_sswsb")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tllwm"]
+atlas = ExtResource("1_sswsb")
+region = Rect2(960, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x6cpj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gf8y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sswsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6cpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_046y8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6g1w0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iio8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qr7kk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbra4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v54o2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yqk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocda1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p17xo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tllwm")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_046y8"]
+radius = 11.0
+height = 38.0
+
+[node name="pawn" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 2
+collision_mask = 13
+motion_mode = 1
+script = ExtResource("1_fbra4")
+damage_player = 2
+score_add = 3
+speed = 45
+drop_chance = 0.05
+drop_items = Array[PackedScene]([ExtResource("2_v54o2"), ExtResource("3_5yqk6")])
+drop_chances = Array[float]([0.7, 0.3])
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -27)
+sprite_frames = SubResource("SpriteFrames_x6cpj")
+autoplay = "run"
+frame_progress = 0.230083
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -20)
+shape = SubResource("CapsuleShape2D_046y8")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_3gf8y")
+
+[node name="marker_digit" type="Marker2D" parent="."]
+position = Vector2(0, -46)

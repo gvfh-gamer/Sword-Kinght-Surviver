@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://cxs1ef11kqouv"]
+
+[ext_resource type="Texture2D" uid="uid://cu7tpe4ri1af" path="res://assets/swords_knight/Resources/Resources/G_Spawn.png" id="1_pupsr"]
+[ext_resource type="Script" uid="uid://0qhuq672msv1" path="res://scripts/effects/life_regenerator.gd" id="2_8iynq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iynq"]
+atlas = ExtResource("1_pupsr")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20j3j"]
+atlas = ExtResource("1_pupsr")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iedl"]
+atlas = ExtResource("1_pupsr")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7q3u5"]
+atlas = ExtResource("1_pupsr")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45p4u"]
+atlas = ExtResource("1_pupsr")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk3mo"]
+atlas = ExtResource("1_pupsr")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fnr8"]
+atlas = ExtResource("1_pupsr")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c7ttn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iynq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20j3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6iedl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7q3u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45p4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk3mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fnr8")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hs7v3"]
+radius = 28.0
+
+[node name="gold" type="AnimatedSprite2D"]
+y_sort_enabled = true
+sprite_frames = SubResource("SpriteFrames_c7ttn")
+autoplay = "default"
+frame = 6
+frame_progress = 1.0
+offset = Vector2(0, -25)
+script = ExtResource("2_8iynq")
+regenerator = 5
+
+[node name="area2d_gold" type="Area2D" parent="."]
+position = Vector2(1, -12)
+
+[node name="collision_gold" type="CollisionShape2D" parent="area2d_gold"]
+position = Vector2(4, -2)
+shape = SubResource("CircleShape2D_hs7v3")
+
+[connection signal="body_entered" from="area2d_gold" to="." method="_meat_body_entered"]

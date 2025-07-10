@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://rk8iiea04xy4"]
+
+[ext_resource type="Script" uid="uid://dqt115nawtf7o" path="res://scripts/system/difficulty_spawn.gd" id="1_0boky"]
+
+[node name="difficulty_spawn" type="Node"]
+script = ExtResource("1_0boky")
+wave_duration = 25.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_timer_timeout"]

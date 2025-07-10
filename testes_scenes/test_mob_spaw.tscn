@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b88qa3bqlq2kr"]
+
+[ext_resource type="PackedScene" uid="uid://bfh3rsl14vrff" path="res://prefabs/player/player.tscn" id="1_010re"]
+[ext_resource type="PackedScene" uid="uid://bs4nb5ckq4fhy" path="res://prefabs/system/mob_spaw.tscn" id="2_vi33n"]
+[ext_resource type="PackedScene" uid="uid://4sostjpfpa8w" path="res://prefabs/itens/meat.tscn" id="3_vi33n"]
+
+[node name="TestMobSpaw" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_010re")]
+position = Vector2(660, 360)
+
+[node name="mob_spaw" parent="." instance=ExtResource("2_vi33n")]
+mobs_per_seconds = 5.0
+mobs_per_minute = 20.0
+
+[node name="meat" parent="." instance=ExtResource("3_vi33n")]
+position = Vector2(86, 115)
+
+[node name="meat2" parent="." instance=ExtResource("3_vi33n")]
+position = Vector2(1008, 134)
+
+[node name="meat3" parent="." instance=ExtResource("3_vi33n")]
+position = Vector2(1050, 573)

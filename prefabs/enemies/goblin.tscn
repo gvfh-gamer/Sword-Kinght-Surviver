@@ -1,0 +1,160 @@
+[gd_scene load_steps=24 format=3 uid="uid://dfved0vuhx8s3"]
+
+[ext_resource type="Script" uid="uid://om2opg1uagp6" path="res://scripts/enemies/enemy.gd" id="1_8ymvn"]
+[ext_resource type="Texture2D" uid="uid://bo3ix4j4nu881" path="res://assets/swords_knight/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="2_hjben"]
+[ext_resource type="PackedScene" uid="uid://4sostjpfpa8w" path="res://prefabs/itens/meat.tscn" id="2_vcg6f"]
+[ext_resource type="PackedScene" uid="uid://k50x371racgu" path="res://prefabs/itens/gold_meat.tscn" id="3_l4abe"]
+[ext_resource type="PackedScene" uid="uid://cxs1ef11kqouv" path="res://prefabs/itens/gold.tscn" id="4_l4abe"]
+[ext_resource type="Script" uid="uid://d1ljj1vckv4wj" path="res://scripts/enemies/falow_player.gd" id="4_wlgu2"]
+[ext_resource type="PackedScene" uid="uid://b24370vo7qj4a" path="res://prefabs/itens/gold_big.tscn" id="5_wlgu2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ymvn"]
+atlas = ExtResource("2_hjben")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcg6f"]
+atlas = ExtResource("2_hjben")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4abe"]
+atlas = ExtResource("2_hjben")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlgu2"]
+atlas = ExtResource("2_hjben")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d5nm"]
+atlas = ExtResource("2_hjben")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6jui"]
+atlas = ExtResource("2_hjben")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sf0cg"]
+atlas = ExtResource("2_hjben")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb6lg"]
+atlas = ExtResource("2_hjben")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkomg"]
+atlas = ExtResource("2_hjben")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lpxk"]
+atlas = ExtResource("2_hjben")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj8al"]
+atlas = ExtResource("2_hjben")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtsq2"]
+atlas = ExtResource("2_hjben")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6jb6"]
+atlas = ExtResource("2_hjben")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir7pr"]
+atlas = ExtResource("2_hjben")
+region = Rect2(960, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x6cpj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ymvn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcg6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4abe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlgu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3d5nm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6jui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sf0cg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yb6lg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkomg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lpxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj8al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtsq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6jb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir7pr")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_046y8"]
+radius = 13.0
+height = 36.0
+
+[node name="goblin" type="CharacterBody2D" groups=["enemy"]]
+scale = Vector2(2, 2)
+collision_layer = 2
+collision_mask = 13
+motion_mode = 1
+script = ExtResource("1_8ymvn")
+damage_player = 3
+health = 25
+score_add = 5
+speed = 25
+drop_chance = 0.2
+drop_items = Array[PackedScene]([ExtResource("2_vcg6f"), ExtResource("4_l4abe"), ExtResource("3_l4abe"), ExtResource("5_wlgu2")])
+drop_chances = Array[float]([0.5, 0.3, 0.1, 0.2])
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_x6cpj")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.719824
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -18)
+shape = SubResource("CapsuleShape2D_046y8")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("4_wlgu2")
+
+[node name="marker_digit" type="Marker2D" parent="."]
+position = Vector2(0, -55.5)

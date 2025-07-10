@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://clpl8wg5wgu7q"]
+
+[ext_resource type="Texture2D" uid="uid://b51023qbpyb6q" path="res://assets/swords_knight/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="1_24jht"]
+[ext_resource type="PackedScene" uid="uid://bfh3rsl14vrff" path="res://prefabs/player/player.tscn" id="2_rrceo"]
+[ext_resource type="PackedScene" uid="uid://qvjgn1x62jt6" path="res://prefabs/enemies/pawn.tscn" id="3_lm3wr"]
+
+[node name="cena_teste" type="Node2D"]
+
+[node name="WarriorPurple" type="Sprite2D" parent="."]
+position = Vector2(1774, 782)
+texture = ExtResource("1_24jht")
+
+[node name="Player" parent="." instance=ExtResource("2_rrceo")]
+position = Vector2(345, 293)
+smoothing = 0.15
+
+[node name="pawn" parent="." instance=ExtResource("3_lm3wr")]
+position = Vector2(616, 270)
